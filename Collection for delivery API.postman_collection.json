@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "18db2ef7-52c7-46a9-9f2f-f6fcc0c1fbf2",
+		"name": "Collection for delivery API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8493408"
+	},
+	"item": [
+		{
+			"name": "initialize timeslots",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/initializeTimeslots",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"initializeTimeslots"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resolve address",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"searchTerm\":\"37 Upper Montagu Street, Westminster W1H 1LJ, United Kingdom\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/resolve-address",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"resolve-address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "book delivery",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\":{\n        \"username\":\"user1\",\n        \"address\": {\n            \"addressId\": {\n                \"country\": \"United Kingdom\",\n                \"city\": \"Westminster\",\n                \"postcode\": \"W1H 2LJ\",\n                \"street\": \"Upper Montagu Street\",\n                \"houseNumber\": \"37\"\n            },\n            \"line1\": \"37 Upper Montagu Street\",\n            \"line2\": \"Westminster, W1H 1LJ, United Kingdom\"\n        }\n    },\n    \"timeslotId\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/deliveries",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"deliveries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get weekly deliveries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/deliveries/weekly",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"deliveries",
+						"weekly"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get daily deliveries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/deliveries/daily",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"deliveries",
+						"daily"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "complete delivery",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/deliveries/2/complete",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"deliveries",
+						"2",
+						"complete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancel delivery",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/deliveries/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"deliveries",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retrieve timeslots",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"addressId\": {\n        \"country\": \"United Kingdom\",\n        \"city\": \"Westminster\",\n        \"postcode\": \"W1H 5LJ\",\n        \"street\": \"Upper Montagu Street\",\n        \"houseNumber\": \"37\"\n    },\n    \"line1\": \"37 Upper Montagu Street\",\n    \"line2\": \"Westminster, W1H 1LJ, United Kingdom\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/timeslots",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"timeslots"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
