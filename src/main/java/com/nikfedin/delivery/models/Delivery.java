@@ -3,7 +3,6 @@ package com.nikfedin.delivery.models;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Builder
